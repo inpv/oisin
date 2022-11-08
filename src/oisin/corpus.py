@@ -23,12 +23,13 @@ spellings = {
     'dmg': 'damage'
 }
 
+
 def capitalizations(text):
     words = re.split("[^0-9a-zA-Z']", text)
     counts = defaultdict(Counter)
     for w in words:
         counts[w.lower()][w] += 1
-    return {w:counts[w].most_common(1)[0][0] for w in counts}
+    return {w: counts[w].most_common(1)[0][0] for w in counts}
 
 
 def tokenize(text):
